@@ -12,7 +12,7 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
-import ActionSheet from '@yfuks/react-native-action-sheet';
+import ActionSheet from 'react-native-action-sheet';
 
 var BUTTONS = [
   'Option 0',
@@ -48,7 +48,8 @@ export default class Example extends Component {
       options: BUTTONS,
       cancelButtonIndex: CANCEL_INDEX,
       destructiveButtonIndex: DESTRUCTIVE_INDEX,
-      tintColor: 'blue'
+      tintColor: 'blue',
+      title: 'TITLE',
     },
     (buttonIndex) => {
       this.setState({ clicked: BUTTONS[buttonIndex] });

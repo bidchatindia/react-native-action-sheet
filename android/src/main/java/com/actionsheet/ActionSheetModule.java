@@ -72,6 +72,12 @@ public class ActionSheetModule extends ReactContextBaseJavaModule {
       builder.setTitle(options.getString("title"));
     }
 
+    /* @TODO message currently disable the options
+    if (options.hasKey("message") && options.getString("message") != null && !options.getString("message").isEmpty()) {
+      builder.setMessage(options.getString("message"));
+    }
+    */
+
     builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
       public void onClick(DialogInterface dialog, int index) {
         callback.invoke(index);

@@ -1,4 +1,4 @@
-# react-native-action-sheet [![npm version](https://badge.fury.io/js/%40yfuks%2Freact-native-action-sheet.svg)](https://badge.fury.io/js/%40yfuks%2Freact-native-action-sheet) ![MIT](https://img.shields.io/dub/l/vibe-d.svg) ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-yellow.svg)
+# react-native-action-sheet [![npm version](https://badge.fury.io/js/react-native-action-sheet.svg)](https://badge.fury.io/js/react-native-action-sheet) ![MIT](https://img.shields.io/dub/l/vibe-d.svg) ![Platform - Android and iOS](https://img.shields.io/badge/platform-Android%20%7C%20iOS-yellow.svg)
 React native action sheet with native android (using the built-in [AlertDialog](https://developer.android.com/reference/android/app/AlertDialog.html))
 
 This module simply return the [ActionSheetIOS](https://facebook.github.io/react-native/docs/actionsheetios.html) if the device on iOS
@@ -12,12 +12,18 @@ iOS | Android
 - [Usage](#usage)
 - [Methods](#methods)
 
+# IMPORTANT ! Package name on npm is now react-native-action-sheet
 ## Install
 
-`npm install @yfuks/react-native-action-sheet@latest --save`
+`npm install react-native-action-sheet@latest --save`
+`react-native link react-native-action-sheet`
+
+## if react native < 0.47
+
+`npm install @yfuks/react-native-action-sheet@0.0.3 --save`
 `react-native link @yfuks/react-native-action-sheet`
 
-#### Android
+### Android
 
 The `react-native link` command above should do everything you need, but if for some reason it does not work, you can replicate its effects manually by making the following changes.
 
@@ -26,7 +32,7 @@ The `react-native link` command above should do everything you need, but if for 
 ...
 
 include ':react-native-action-sheet'
-project(':react-native-action-sheet').projectDir = new File(settingsDir, '../node_modules/@yfuks/react-native-action-sheet/android')
+project(':react-native-action-sheet').projectDir = new File(settingsDir, '../node_modules/react-native-action-sheet/android')
 ```
 ```gradle
 // file: android/app/build.gradle
@@ -57,10 +63,14 @@ public class MainApplication extends Application implements ReactApplication {
 
 ```
 
+#### (Optional) Style customization
+
+You can change the style of the dialog by editing `nodes_modules/react-native-action-sheet/android/src/main/res/values/style.xml`
+
 ## Usage
 
 ```javascript
-import ActionSheet from '@yfuks/react-native-action-sheet';
+import ActionSheet from 'react-native-action-sheet';
 import { Platform } from 'react-native';
 
 var BUTTONSiOS = [
